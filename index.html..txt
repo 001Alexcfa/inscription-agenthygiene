@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Concours Agent d'Hygiène</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { max-width: 600px; background: white; padding: 20px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        input, select, button { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: #28a745; color: white; font-size: 16px; }
+    </style>
+    <script>
+        function validateForm(event) {
+            const payment = document.getElementById("payment").value;
+            if (payment === "") {
+                alert("Veuillez effectuer le paiement avant de soumettre l'inscription.");
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Inscription au Concours Agent d'Hygiène</h2>
+        <form action="#" method="POST" enctype="multipart/form-data" onsubmit="validateForm(event)">
+            <label for="name">Nom et Prénom(s) :</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="dob">Date de naissance :</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label for="birthplace">Lieu de naissance :</label>
+            <input type="text" id="birthplace" name="birthplace" required>
+            
+            <label for="department">Département :</label>
+            <input type="text" id="department" name="department" required>
+            
+            <label for="diploma">Type de diplôme :</label>
+            <select id="diploma" name="diploma" required>
+                <option value="">Sélectionner un diplôme</option>
+                <option value="cepe">Certificat d'Études Primaires Élémentaires (CEPE)</option>
+                <option value="bepc">Brevet d'Études du Premier Cycle (BEPC)</option>
+                <option value="bac">Baccalauréat</option>
+                <option value="autre">Autre</option>
+            </select>
+            
+            <label for="cni">Numéro de CNI / Passeport :</label>
+            <input type="text" id="cni" name="cni" required>
+            
+            <label for="documents">Télécharger les documents requis :</label>
+            <input type="file" id="documents" name="documents" multiple required>
+            
+            <label for="payment">Frais d'inscription (23.500 F CFA + 7.000 F CFA) :</label>
+            <select id="payment" name="payment" required>
+                <option value="">Sélectionner un mode de paiement</option>
+                <option value="mobile_money">Mobile Money</option>
+                <option value="carte_bancaire">Carte Bancaire</option>
+            </select>
+            
+            <p><strong>Numéro de paiement Mobile Money :</strong> +2250704796292</p>
+            
+            <button type="submit">Soumettre l'inscription</button>
+        </form>
+    </div>
+</body>
+</html>
